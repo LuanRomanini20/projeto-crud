@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Editar Registro</title>
+</head>
+<body>
+    <h2>Editar Registro</h2>
+    <% data.forEach(function(details) { %>
+        <form action="/edit/<%=details._id%>" method="post">
+            <input type="text" value="<%=details.txtname %>" name="nome">
+            <input type="text" value="<%=details.txtsobrenome %>" name="sobrenome">
+            <br>
+            <button><a href="/show">Mostrar todos</a></button>
+            <button type="submit">Editar</button>
+        </form>
+    <%})%>
+</body>
+</html>

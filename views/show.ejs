@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        table {
+            border-collapse: collapse;
+            width: 100%;
+        }
+
+        table, th, td {
+            border: 1px solid black;
+        }
+
+        th, td {
+            padding: 8px;
+            text-align: left;
+        }
+    </style>
+</head>
+<body>
+    <h1>Registros</h1>
+    <table>
+            <thead>
+                <tr>
+                    <td>Nome</td>
+                    <td>Sobrenome</td>
+                </tr>
+            </thead>
+            <tbody>
+            <% data.forEach(function(details) { %>
+                <tr>
+                    <td><%= details.txtname %></td>
+                    <td><%= details.txtsobrenome %></td>
+                    <td>
+                        <a href="/edit/<%=details._id %>">Editar - </a>
+                        <a href="/delete/<%=details._id%>">Deletar</a>
+                    </td>
+                </tr>
+                <% }) %>
+        </tbody>
+    </table>
+    <button><a href="/">Novo</a></button>
+</body>
+</html>
